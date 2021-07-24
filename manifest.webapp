@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "name": "Nihonoari",
+  "description": "my rip-off of the Android App Nihonoari(https://github.com/aeri/Nihonoari-App) for KaiOS",
+  "launch_path": "/index.html",
+  "icons": {
+    "16": "/img/icons/icon16x16.png",
+    "48": "/img/icons/icon48x48.png",
+    "60": "/img/icons/icon60x60.png",
+    "128": "/img/icons/icon128x128.png"
+  },
+  "origin": "app://nihonoari.bananahackers.net",
+  "developer": {
+    "name": "Cyan",
+    "url": "https://github.com/cyan-2048/Nihonoari-KaiOS"
+  },
+  "type": "privileged",
+  "permissions": {},
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en"
+}

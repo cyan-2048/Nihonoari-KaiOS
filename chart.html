@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>chart</title>
+<meta name="description" content="rip-off of Nihonoari">
+<meta charset="utf-8">
+<meta name="viewport" content="width=240, initial-scale=1">
+
+<style>
+:root{
+	--zooming: scale(0.965);
+	transition: all ease 0.2s;
+}
+
+@keyframes mdl-slideIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes getaway {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+.gofaraway {
+	animation: getaway 0.5s;
+}
+
+table {
+ margin: 0;
+ border-spacing: 3px;
+ border-color: rgba(0,0,0,0);
+}
+
+th, td {
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  text-align: left;
+  padding: 0px;
+  position: relative;
+}
+
+html, body {
+	animation:mdl-slideIn 0.5s;
+	transition: all ease 0.2s;
+    font-family: 'open sans','noto sans';
+	background-color: rgb(22,22,22);
+	margin: 0;
+	padding: 0;
+  -moz-transform: var(--zooming);
+  -moz-transform-origin: 0 0;
+  -o-transform: var(--zooming);
+  -o-transform-origin: 0 0;
+  -webkit-transform: var(--zooming);
+  -webkit-transform-origin: 0 0;
+}
+
+.gana {
+	font-weight: 300;
+	color: orange;
+	width: 48px;
+	height: 48px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+
+.gana p {
+	position: absolute;
+    transform: translateY(-50%);
+    font-size: 22px;
+    right: 28%;
+}
+
+.kana {
+
+	font-weight: 500;
+	width: 48px;
+	height: 48px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	font-size: 16px;
+}
+
+.kana p {
+	    transform: translateY(10%) translateX(-10%);
+}
+
+.hira {
+	transform: translateY(-20%);
+	right: 30%;
+	position: absolute;
+} 
+
+.kata p{
+	transform: translateY(90%);
+	left: 10px;
+	position: absolute;
+	font-size: 12px;
+} 
+
+.roma p{
+    right: 10px;
+	transform: translateY(90%);
+	position: absolute;
+	font-size: 12px;
+} 
+
+#bottomnottop {
+	position: relative;
+	width: 100%;
+}
+
+</style>
+
+<script>
+function handleKEYS(e){
+const root = document.querySelector(':root');
+	if (e.key == 'Backspace'){
+	e.preventDefault();
+	document.querySelector("body").classList.add("gofaraway");
+	setTimeout(function(){history.go(-1);},500);
+	}
+	if (e.key == 'ArrowUp'){
+	e.preventDefault();
+	window.scrollBy({top: -120, behavior: 'smooth'});
+	}
+	if (e.key == 'ArrowDown'){
+	e.preventDefault();
+	window.scrollBy({top: 120, behavior: 'smooth'});
+	}
+	if (e.key == 'ArrowLeft'){
+	e.preventDefault();
+	window.scrollBy({left: -79, behavior: 'smooth'});
+	}
+	if (e.key == 'ArrowRight'){
+	e.preventDefault();
+	window.scrollBy({left: 79, behavior: 'smooth'});
+	}
+if (e.key == 'SoftRight' || e.key == '=') {
+    switch (localStorage.chartzoom) {
+    case '5':
+        localStorage.chartzoom = "4";
+        root.style.setProperty('--zooming', 'scale(1.077)');
+        break;
+    case '4':
+        localStorage.chartzoom = "3";
+        root.style.setProperty('--zooming', 'scale(1.24)');
+        break;
+    case '6':
+        localStorage.chartzoom = "5";
+        root.style.setProperty('--zooming', 'scale(0.965)');
+        break;
+    }
+}
+if (e.key == 'SoftLeft' || e.key == "-") {
+    switch (localStorage.chartzoom) {
+    case "3":
+        localStorage.chartzoom = "4";
+        root.style.setProperty('--zooming', 'scale(1.077)')
+        break;
+    case "4":
+        localStorage.chartzoom = "5";
+        root.style.setProperty('--zooming', 'scale(0.965)')
+        break;
+    case "5":
+        localStorage.chartzoom = "6";
+        root.style.setProperty('--zooming', 'scale(0.88)')
+        break;
+    }
+}
+}
+
+function practiceSwitching(){
+const root = document.querySelector(':root');
+	switch (localStorage.chartzoom){
+	case "6":
+	root.style.setProperty('--zooming', 'scale(0.88)')
+	break;
+	case "5":
+	root.style.setProperty('--zooming', 'scale(0.965)')
+	break;
+	case "4":
+	root.style.setProperty('--zooming', 'scale(1.077)')
+	break;
+	case "3":
+	root.style.setProperty('--zooming', 'scale(1.24)')
+	break;
+	}
+}
+
+document.addEventListener("keydown", handleKEYS);
+checkFirstTime();
+practiceSwitching();
+function checkFirstTime(){
+	if (localStorage.FTU == "NO"){
+	console.log("( ͡° ͜ʖ ͡°)")
+	}  else {
+	alert("Press LSK/RSK to zoom in/out.");
+	localStorage.chartzoom ="5";
+	 localStorage.FTU = "NO"; 
+	}
+}
+</script>
+</head>
+<body>
+
+<div>
+  <table>
+    <tr>
+      <th><div class="gana"></div></th>
+      <th><div class="gana"><p>あ</p></div></th>
+      <th><div class="gana"><p>い</p></div></th>
+      <th><div class="gana"><p>う</p></div></th>
+      <th><div class="gana"><p>え</p></div></th>
+      <th><div class="gana"><p>お</p></div></th>
+    </tr>
+    <tr>
+      <td><div class="gana"><p>あ</p></div></td>
+      <td><div class="kana" ><div class="hira"><p>あ</p></div><div class="kata"><p>ア</p></div><div class="roma"><p>a</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>い</p></div><div class="kata"><p>イ</p></div><div class="roma"><p>i</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>う</p></div><div class="kata"><p>ウ</p></div><div class="roma"><p>u</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>え</p></div><div class="kata"><p>エ</p></div><div class="roma"><p>e</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>お</p></div><div class="kata"><p>オ</p></div><div class="roma"><p>o</p></div></div></td>
+    </tr>
+    <tr>
+      <td><div class="gana"><p>か</p></div></td>
+      <td><div class="kana" ><div class="hira"><p>か</p></div><div class="kata"><p>カ</p></div><div class="roma"><p>ka</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>き</p></div><div class="kata"><p>キ</p></div><div class="roma"><p>ki</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>く</p></div><div class="kata"><p>ク</p></div><div class="roma"><p>ku</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>け</p></div><div class="kata"><p>ケ</p></div><div class="roma"><p>ke</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>こ</p></div><div class="kata"><p>コ</p></div><div class="roma"><p>ko</p></div></div></td>
+     
+    </tr>
+    <tr>
+      <td><div class="gana"><p>さ</p></div></td>
+      <td><div class="kana" ><div class="hira"><p>さ</p></div><div class="kata"><p>サ</p></div><div class="roma"><p>sa</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>し</p></div><div class="kata"><p>シ</p></div><div class="roma"><p>shi</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>す</p></div><div class="kata"><p>ス</p></div><div class="roma"><p>su</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>せ</p></div><div class="kata"><p>セ</p></div><div class="roma"><p>se</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>そ</p></div><div class="kata"><p>ソ</p></div><div class="roma"><p>so</p></div></div></td>
+    </tr>
+    <tr>
+      <td><div class="gana"><p>た</p></div></td>
+      <td><div class="kana" ><div class="hira"><p>た</p></div><div class="kata"><p>タ</p></div><div class="roma"><p>ta</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>ち</p></div><div class="kata"><p>チ</p></div><div class="roma"><p>chi</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>つ</p></div><div class="kata"><p>ツ</p></div><div class="roma"><p>tsu</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>て</p></div><div class="kata"><p>テ</p></div><div class="roma"><p>te</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>と</p></div><div class="kata"><p>ト</p></div><div class="roma"><p>to</p></div></div></td>
+    </tr>
+    <tr>
+      <td><div class="gana"><p>な</p></div></td>
+      <td><div class="kana" ><div class="hira"><p>な</p></div><div class="kata"><p>ナ</p></div><div class="roma"><p>na</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>に</p></div><div class="kata"><p>ニ</p></div><div class="roma"><p>ni</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>ぬ</p></div><div class="kata"><p>ヌ</p></div><div class="roma"><p>nu</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>ね</p></div><div class="kata"><p>ネ</p></div><div class="roma"><p>ne</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>の</p></div><div class="kata"><p>ノ</p></div><div class="roma"><p>no</p></div></div></td>
+    </tr>
+    <tr>
+      <td><div class="gana"><p>は</p></div></td>
+      <td><div class="kana" ><div class="hira"><p>は</p></div><div class="kata"><p>ハ</p></div><div class="roma"><p>ha</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>ひ</p></div><div class="kata"><p>ヒ</p></div><div class="roma"><p>hi</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>ふ</p></div><div class="kata"><p>フ</p></div><div class="roma"><p>fu</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>へ</p></div><div class="kata"><p>ヘ</p></div><div class="roma"><p>he</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>ほ</p></div><div class="kata"><p>ホ</p></div><div class="roma"><p>ho</p></div></div></td>
+    </tr>
+    <tr>
+      <td><div class="gana"><p>ま</p></div></td>
+      <td><div class="kana" ><div class="hira"><p>ま</p></div><div class="kata"><p>マ</p></div><div class="roma"><p>ma</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>み</p></div><div class="kata"><p>ミ</p></div><div class="roma"><p>mi</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>む</p></div><div class="kata"><p>ム</p></div><div class="roma"><p>mu</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>め</p></div><div class="kata"><p>メ</p></div><div class="roma"><p>me</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>も</p></div><div class="kata"><p>モ</p></div><div class="roma"><p>mo</p></div></div></td>
+    </tr>
+    <tr>
+      <td><div class="gana"><p>や</p></div></td>
+      <td><div class="kana" ><div class="hira"><p>や</p></div><div class="kata"><p>ヤ</p></div><div class="roma"><p>ya</p></div></div></td>
+      <td></td>
+      <td><div class="kana" ><div class="hira"><p>ゆ</p></div><div class="kata"><p>ユ</p></div><div class="roma"><p>yu</p></div></div></td>
+      <td></td>
+      <td><div class="kana" ><div class="hira"><p>よ</p></div><div class="kata"><p>ヨ</p></div><div class="roma"><p>yo</p></div></div></td>
+    </tr>
+    <tr>
+      <td><div class="gana"><p>ら</p></div></td>
+      <td><div class="kana" ><div class="hira"><p>ら</p></div><div class="kata"><p>ラ</p></div><div class="roma"><p>ra</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>り</p></div><div class="kata"><p>リ</p></div><div class="roma"><p>ri</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>る</p></div><div class="kata"><p>ル</p></div><div class="roma"><p>ru</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>れ</p></div><div class="kata"><p>レ</p></div><div class="roma"><p>re</p></div></div></td>
+      <td><div class="kana" ><div class="hira"><p>ろ</p></div><div class="kata"><p>ロ</p></div><div class="roma"><p>ro</p></div></div></td>
+    </tr>
+    <tr>
+      <td><div class="gana"><p>わ</p></div></td>
+      <td><div class="kana" ><div class="hira"><p>わ</p></div><div class="kata"><p>ワ</p></div><div class="roma"><p>wa</p></div></div></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><div class="kana" ><div class="hira"><p>を</p></div><div class="kata"><p>ヲ</p></div><div class="roma"><p>wo</p></div></div></td>
+    </tr>
+    <tr>
+      <td><div class="gana"><p></p></div></td>
+      <td><div class="kana" ><div class="hira"><p>ん</p></div><div class="kata"><p>ン</p></div><div class="roma"><p>n</p></div></div></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+
+  </table>
+  
+
+
+</body>
+</html>
