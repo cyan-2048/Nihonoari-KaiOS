@@ -13,6 +13,18 @@ Nihonoari-KaiOS is a Japanese Kana training app for KaiOS.
 - made using my ~~horrible~~ beginner JS skills. 
 - WIP -> the training part, i haven't done it yet im a lazy ass... if you want to help me PRs are very much appreciated...
 
+## Screenshots
+
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/main.png)
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/Select%20One.png)
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/raitu.png)
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/wrang.png)
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/shtatishtiks.png)
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/3.png)
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/4.png)
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/5.png)
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/6.png)
+
 ## Built With
 - [JavaScript SpatialNavigation](https://github.com/luke-chang/js-spatial-navigation) - I'm using Luke Chang's coz naviboard won't work... and i'm not smart enough to make my own... (it's under MPL-2.0 btw)
 - [Nihonoari](https://github.com/aeri/Nihonoari-App) - Just used the icons and the whole idea of it... (GPL-3.0)
@@ -34,6 +46,6 @@ MIT
 **Free Software, Hell Yeah!**
 
 ## Honorable mentions lol
-[arma7x](https://github.com/arma7x/)- for being awesome
-[https://dillinger.io/](https://dillinger.io/)- im bad at markdown if it doesn't let me see the end result
+- [arma7x](https://github.com/arma7x/)- for being awesome
+- [https://dillinger.io/](https://dillinger.io/)- im bad at markdown if it doesn't let me see the end result(the hell just realized i could've just use github for that)
 
