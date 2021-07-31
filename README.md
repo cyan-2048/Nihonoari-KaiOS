@@ -11,7 +11,7 @@ Nihonoari-KaiOS is a Japanese Kana training app for KaiOS.
 
 - No ads (unless i wanna upload this to the KaiStore)
 - made using my ~~horrible~~ beginner JS skills. 
-- WIP -> the training part, i haven't done it yet im a lazy ass... if you want to help me PRs are very much appreciated...
+- WIP -> ~~the training part, i haven't done it yet im a lazy ass... if you want to help me PRs are very much appreciated~~ es done... more cosmetic changes will come doe
 
 ## Built With
 - [JavaScript SpatialNavigation](https://github.com/luke-chang/js-spatial-navigation) - I'm using Luke Chang's coz naviboard won't work... and i'm not smart enough to make my own... (it's under MPL-2.0 btw)
@@ -25,7 +25,7 @@ Nihonoari-KaiOS is a Japanese Kana training app for KaiOS.
 
 ## Installation
 
-i'll upload it to the bhackers store if im done... if you would like to try it out rn you can visit this website(WIP, and i need help with this... i have no idea how iframes work lmao) or install the source code through WebIDE
+i'll upload it to the bhackers store if im done...  or just install the source code through WebIDE
 
 ## License
 
@@ -35,5 +35,5 @@ MIT
 
 ## Honorable mentions lol
 [arma7x](https://github.com/arma7x/)- for being awesome
-[https://dillinger.io/](https://dillinger.io/)- im bad at markdown if it doesn't let me see the end result
+yeah and also permafrost
 

@@ -97,6 +97,7 @@ font-size: 80px;
 font-weight: 300;
 text-align: center;
 width: 100%;
+outline: none;
 }
 
 #datonebox::placeholder {
@@ -104,19 +105,13 @@ width: 100%;
 
 }
 
-input { 
-    text-transform: uppercase;
-}
-::-webkit-input-placeholder { /* WebKit browsers */
-    text-transform: none;
-}
+
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
     text-transform: none;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
     text-transform: none;
 }
-:-ms-input-placeholder { /* Internet Explorer 10+ */
     text-transform: none;
 }
 ::placeholder { /* Recent browsers */
@@ -354,11 +349,7 @@ html, body {
    height: calc(100% - 58px)
 }
 
-.lazyloaded {
-	position: fixed;
-	top:0;
-	
-}
+
 /* Header */
 
 #header {
@@ -897,7 +888,6 @@ background-size: cover;
   font-weight: 600;
   src: local(''),
        url('../fonts/fira-sans-v11-latin-ext_latin-600.woff2') format('woff2'); 
-       url('../fonts/fira-sans-v11-latin-ext_latin-600.woff') format('woff'); 
 }
 
 
@@ -906,7 +896,7 @@ background-size: cover;
   font-style: normal;
   font-weight: 700;
   src: local(''),
-       url('../fonts/fira-sans-v11-latin-ext_latin-700.woff2') format('woff2'); 
+       url('../fonts/fira-sans-v11-latin-ext_latin-600.woff2') format('woff2'); 
 }
 
 
@@ -919,13 +909,6 @@ background-size: cover;
 }
 
 
-@font-face {
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 900;
-  src: local(''),
-       url('../fonts/fira-sans-v11-latin-ext_latin-900.woff2') format('woff2'); 
-}
 
 /* from https://github.com/nadim1992/KaiUI/blob/develop/css/kaiui.css */
 /* ============== Toast ============== */
@@ -984,29 +967,31 @@ background-size: cover;
 
 .chart-pop {
 background-color: rgb(33,33,33);
-position: relative;
-top: 70.5px;
+margin: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
 width: 225px;
 padding: 17px;
 box-sizing: border-box;
-margin: auto;
 border-radius: 10px;
 z-index: 6;
 line-height: 25px;
 font-size: 17px;
-box-shadow: 0px 0px 0px 240px rgba(0,0,0,0.7);
-animation: candypop ease 0.5s;
+box-shadow: 0px 0px 0px 800px rgba(0,0,0,0.7);
+animation: candypop ease 0.3s;
 display:none;
 outline: none;
 }
 
 @keyframes candypop {
 	from {
-		transform: scale(0.5);
+		transform: scale(0.2);
 		opacity: 0;
 	}
 	to {
-		transform: scale(1);
+		transform: scale(1) translate(-50%, -50%);
 		opacity: 1;
 	}
 }
