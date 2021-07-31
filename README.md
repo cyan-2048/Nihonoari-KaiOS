@@ -46,11 +46,5 @@ MIT
 **Free Software, Hell Yeah!**
 
 ## Honorable mentions lol
-<<<<<<< HEAD
 [arma7x](https://github.com/arma7x/)- for being awesome
 yeah and also permafrost
-=======
-- [arma7x](https://github.com/arma7x/)- for being awesome
-- [https://dillinger.io/](https://dillinger.io/)- im bad at markdown if it doesn't let me see the end result(the hell just realized i could've just use github for that)
->>>>>>> 25e5f912e3958b4cd7430b271cbbacb10b847d3f
-
