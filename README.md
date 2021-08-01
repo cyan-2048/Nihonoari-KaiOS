@@ -18,8 +18,10 @@ Nihonoari-KaiOS is a Japanese Kana training app for KaiOS.
 
 ![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/main.png)
 ![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/Select%20One.png)
-![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/raitu.png)
-![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/wrang.png)
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/pilika.png)
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/pi.png)
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/tamaka.png)
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/malika.png)
 ![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/shtatishtiks.png)
 ![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/3.png)
 ![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/4.png)
