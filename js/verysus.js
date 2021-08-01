@@ -200,7 +200,12 @@ window.addEventListener('load', function() {
 	setTimeout(function(){document.querySelector(".lazyloaded").classList.add("fadeaway"); setTimeout(function(){document.querySelector(".lazyloaded").style.display = "none";document.querySelector(".lazyloaded").classList.remove("fadeaway")}, 250); }, 600)
 	for(var i = 0; i < document.querySelectorAll('.hirfocusable').length; i++) {
     document.querySelectorAll('.hirfocusable')[i].checked = false;
+	
 }	
+for(var i = 0; i < document.querySelectorAll('.links').length; i++) {
+	document.querySelectorAll('.links')[i].href = document.querySelectorAll('.links')[i].innerHTML;
+	document.querySelectorAll('.links')[i].target = "_blank";
+}
 for(var i = 0; i < document.querySelectorAll('.katfocusable').length; i++) {
     document.querySelectorAll('.katfocusable')[i].checked = false;
 }

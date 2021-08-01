@@ -11,10 +11,12 @@
 
 @keyframes outYouGo {
 	from {
+		box-shadow: 0px 0px 0px 800px rgba(0,0,0,0.8);
 		bottom:0;
 		opacity:1
 	}
 	to {
+		box-shadow: 0px 0px 0px 800px rgba(0,0,0,0);
 		bottom:-300px;
 		opacity:0
 		height: 0% !important;
@@ -175,7 +177,7 @@ color: white;
 }
 
 .goaway {
-	animation:outYouGo 0.8s !important;
+	animation:outYouGo 0.5s !important;
 	height: 0% !important;
 	transition: all ease 0.5s;
 }
@@ -201,11 +203,12 @@ h1, h2, h3, h4, h5, ul, p {
 }
 
 .hiragana, .katakana, .licenso  {
+	box-shadow: 0px 0px 0px 800px rgba(0,0,0,0.7);
 	animation:mdl-slideIn 0.2s;
 	display: none;
 	background-color: rgb(22,22,22);
 	position: fixed;
-	height: 99%;
+	height: 100%;
 	bottom:0;
 	width: 100%;
 }
@@ -340,13 +343,13 @@ html, body {
 #content {
     overflow: var(--content-overflow);
     width: 100%;
-    height: calc(100% - 58px)
+    height: calc(100% - 60px)
 }
 
 .options {
 	overflow: var(--content-overflow);
     width: 100%;
-   height: calc(100% - 58px)
+   height: calc(100% - 60px)
 }
 
 
