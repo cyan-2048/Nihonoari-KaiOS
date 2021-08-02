@@ -35,8 +35,15 @@ Nihonoari-KaiOS is a Japanese Kana training app for KaiOS.
 - Vanilla Javascript, CSS and HTML - well, if you consider using libraries "vanilla".
 - ❤️
 
-
-
+## Release (this is a template not working yet)
+  <a href="https://play.google.com/store/apps/details?id=com.LAPARCELA.nihonoari">
+    <img src="https://cdn.discordapp.com/attachments/813030840526569472/871547076851425280/konsep.png" alt="Logo" width=200
+  </a>
+  
+  
+  <a href="https://f-droid.org/app/com.LAPARCELA.nihonoari">
+    <img src="https://cdn.discordapp.com/attachments/813030840526569472/871545602578739200/KaiStore-Badge-Greyscale-Negative.png" alt="Logo" width=200
+  </a>
 
 ## Installation
 

@@ -200,7 +200,7 @@ window.addEventListener('load', function() {
 	setTimeout(function(){document.querySelector(".lazyloaded").classList.add("fadeaway"); setTimeout(function(){document.querySelector(".lazyloaded").style.display = "none";document.querySelector(".lazyloaded").classList.remove("fadeaway")}, 250); }, 600)
 	for(var i = 0; i < document.querySelectorAll('.hirfocusable').length; i++) {
     document.querySelectorAll('.hirfocusable')[i].checked = false;
-	
+	trollface();
 }	
 for(var i = 0; i < document.querySelectorAll('.links').length; i++) {
 	document.querySelectorAll('.links')[i].href = document.querySelectorAll('.links')[i].innerHTML;
@@ -532,3 +532,13 @@ function skorKuno(){
 }
 
 //OH GOD I FORGOT DAKUONS AND HANDAKUON AAAAAAAAHHHHHHHH
+window.onresize = trollface;
+
+function trollface(){
+if (window.innerWidth > 240){
+	alert("hai please go inspect element and change the resolution to 240x294")
+} else {
+	
+}
+
+}
