@@ -217,7 +217,7 @@ h1, h2, h3, h4, h5, ul, p {
 	background-color: white;
 	color: black;
 	overflow: auto;
-	height: 215px;
+	height: 222px;
 	padding: 8px;
 }
 .main_item {
@@ -241,6 +241,7 @@ height: 17px;
 :root {
     font-family: "Fira Sans", sans-serif;
 	color: white;
+	outline: none;
 
     /* you can edit these variables */
 
@@ -290,11 +291,16 @@ height: 17px;
 
     --separator-background: #333333;
     --separator-color: #ffffff;
+	
 }
 
 /* change this to any class your spatial navigation library uses. .dpad-navigation for gauntface/dpad-navigation,.navigable for amanboss9/naviboard.*/
 .focusable:focus {
     outline: none;
+}
+
+:focus {
+	outline: none;
 }
 
 /* color when not focused */
@@ -344,6 +350,11 @@ html, body {
     overflow: var(--content-overflow);
     width: 100%;
     height: calc(100% - 60px)
+}
+
+a:focus {
+	background-color: blue;
+	color: white;
 }
 
 .options {

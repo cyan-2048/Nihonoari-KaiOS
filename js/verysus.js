@@ -31,6 +31,7 @@ if (e.key == 'Backspace'){
 		document.querySelector(".licenso").classList.add("goaway");
 		setTimeout(function(){document.querySelector(".licenso").style.display = "none";document.querySelector(".licenso").classList.remove("goaway");document.querySelector("#lissenso").focus();},400);
 		SpatialNavigation.enable("main");
+		hideBowtons();
 	}
 	if (document.activeElement.id == "datonebox" || document.activeElement.className == "kanaklas"){
 		if (document.querySelector("#datonebox").value !== ""){}else{ 
@@ -52,6 +53,11 @@ if (e.key == 'Backspace'){
 	if (document.activeElement.id == "frokus"){
 		hideucharteu();
 		e.preventDefault();
+	}
+	if (document.activeElement.className == "links"){
+		e.preventDefault();
+		document.querySelector("#kopi").focus();
+		SpatialNavigation.remove("links");
 	}
 }
 
@@ -123,6 +129,7 @@ if (e.key == "Enter"){
 	if (document.activeElement.id == "lissenso"){
 		document.querySelector(".licenso").style.display = "block";
 		SpatialNavigation.disable("main");
+		showBowtons("links");
 		document.querySelector("#kopi").focus();
 	}
 	if (document.activeElement.id == "stuwart"){
@@ -182,6 +189,11 @@ if (e.key == "SoftLeft" || e.key == "-"){
 			setTimeout(function(){document.querySelector(".blok").style.display = "none";document.querySelector("#datonebox").focus();document.querySelector(".blok").classList.remove("baiblok")},500);
 			},1000)
 	}
+	if (document.activeElement.id == "kopi"){
+		SpatialNavigation.add({ selector: '.links', straightOnly: true, id: "links",});
+		document.querySelector(".links").focus();
+	}
+	
 }
 }
 
@@ -249,14 +261,18 @@ function hideBowtons(){
 	document.querySelector("#selectbowton").style.display = "inline-flex";
 	document.querySelector("#enterbowton").style.display = "none";
 	document.querySelector("#chartbowton").style.display = "none";
+	document.querySelector(".softkey-left p").innerHTML = "";
 }
-function showBowtons(){
+function showBowtons(e){
+	if (e == "links"){
+    document.querySelector(".softkey-left p").innerHTML = "Links";
+} else {
 	document.querySelector("#scorebowton").style.display = "inline-flex";
 	document.querySelector("#selectbowton").style.display = "none";
 	document.querySelector("#enterbowton").style.display = "inline-flex";
 	document.querySelector("#chartbowton").style.display = "inline-flex";
 }
-
+}
 
 var clicks = 0;
 var timer, timeout = 350; // time between each click
@@ -377,6 +393,7 @@ for(var i = 0; i < tengo.length; i++) {
  event.preventDefault();
  SpatialNavigation.makeFocusable();
  SpatialNavigation.focus();
+ console.log("imagine using a pc to use a kaios app :yuckchamp:")
  });
 }
 document.querySelector(".kanaklas").addEventListener("click", function(){
@@ -399,7 +416,7 @@ function showToast(){
 			skorKuno();
 		},500);
 		
-	},2500);
+	},1800);
 }
 
 function korekKorek(){
@@ -532,13 +549,28 @@ function skorKuno(){
 }
 
 //OH GOD I FORGOT DAKUONS AND HANDAKUON AAAAAAAAHHHHHHHH
-window.onresize = trollface;
+window.addEventListener('resize', trollface);
 
 function trollface(){
-if (window.innerWidth > 240){
-	alert("hai please go inspect element and change the resolution to 240x294")
-} else {
-	
+if (getWidth() > 240){
+	document.querySelector("#trollface").style.display = "block";
+	document.querySelector("#trollfacer").style.display = "block";
+	document.querySelector("#trollfaceu").src = "https://cdn.discordapp.com/attachments/813030840526569472/871692377591545897/hehe.jpeg";
+}
+if (getWidth() <= 240) {
+	document.querySelector("#trollfaceu").src = "https://cdn.discordapp.com/attachments/813030840526569472/871692381009879081/welp.jpg";
+	document.querySelector("#trollfacer").style.display = "none";
+	setTimeout(function(){document.querySelector("#trollface").style.display = "none";},2000);
 }
 
+}
+
+function getWidth() {
+  return Math.max(
+    document.body.scrollWidth,
+    document.documentElement.scrollWidth,
+    document.body.offsetWidth,
+    document.documentElement.offsetWidth,
+    document.documentElement.clientWidth
+  );
 }
