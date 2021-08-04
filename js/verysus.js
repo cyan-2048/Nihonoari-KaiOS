@@ -1,6 +1,7 @@
 var korekto = "beta";
 var chArr;
-enabledAds = "false";
+var enabledAds = "false";
+var chartsClicked = "no";
 
 function toArr(){
 	skorKuno();
@@ -189,12 +190,17 @@ if (e.key == "SoftLeft" || e.key == "-"){
 	if (document.activeElement.id == "datonebox"){
 		e.preventDefault();
 		document.querySelector(".blok").style.display = "block";
+		if (chartsClicked == "no"){
+			chartsClicked = "yes";
 		setTimeout(function(){window.location = "chart.html";},500);
 		setTimeout(function(){
 			document.querySelector(".blok").classList.add("baiblok");
 			
 			setTimeout(function(){document.querySelector(".blok").style.display = "none";document.querySelector("#datonebox").focus();document.querySelector(".blok").classList.remove("baiblok")},500);
+			
 			},1000)
+			setTimeout(function(){chartsClicked = "no";},2000)
+	}
 	}
 	if (document.activeElement.id == "kopi"){
 		SpatialNavigation.add({ selector: '.links', straightOnly: true, id: "links",});
