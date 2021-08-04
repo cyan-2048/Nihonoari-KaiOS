@@ -1,5 +1,6 @@
 var korekto = "beta";
 var chArr;
+enabledAds = "false";
 
 function toArr(){
 	skorKuno();
@@ -58,6 +59,7 @@ if (e.key == 'Backspace'){
 		e.preventDefault();
 		document.querySelector("#kopi").focus();
 		SpatialNavigation.remove("links");
+		linksClicked = "no";
 	}
 }
 
@@ -167,6 +169,11 @@ if (e.key == "SoftRight" || e.key == "="){
 	if (document.activeElement.id == "frokus"){
 		hideucharteu();
 	}
+	if (document.activeElement.id == "kopi"){
+		if (enabledAds == "true"){
+		displayAd();
+		}
+	}
 }
 if (e.key == "SoftLeft" || e.key == "-"){
 	if (document.activeElement.id == "frokus"){
@@ -192,11 +199,19 @@ if (e.key == "SoftLeft" || e.key == "-"){
 	if (document.activeElement.id == "kopi"){
 		SpatialNavigation.add({ selector: '.links', straightOnly: true, id: "links",});
 		document.querySelector(".links").focus();
+		setTimeout(function(){linksClicked = "yes"},500)
+	}
+	if (linksClicked == "yes"){
+		e.preventDefault();
+		document.querySelector("#kopi").focus();
+		SpatialNavigation.remove("links");
+		linksClicked = "no";
 	}
 	
 }
 }
 
+var linksClicked = "no";
 // setInterval(function(){console.log(document.activeElement.parentNode.parentNode.parentElement.className)},500);
 // setInterval(function(){console.log(document.activeElement.id)},500);
 // setTimeout(function(){},500);
@@ -214,10 +229,7 @@ window.addEventListener('load', function() {
     document.querySelectorAll('.hirfocusable')[i].checked = false;
 	trollface();
 }	
-for(var i = 0; i < document.querySelectorAll('.links').length; i++) {
-	document.querySelectorAll('.links')[i].href = document.querySelectorAll('.links')[i].innerHTML;
-	document.querySelectorAll('.links')[i].target = "_blank";
-}
+
 for(var i = 0; i < document.querySelectorAll('.katfocusable').length; i++) {
     document.querySelectorAll('.katfocusable')[i].checked = false;
 }
@@ -262,10 +274,15 @@ function hideBowtons(){
 	document.querySelector("#enterbowton").style.display = "none";
 	document.querySelector("#chartbowton").style.display = "none";
 	document.querySelector(".softkey-left p").innerHTML = "";
+	if (enabledAds == "true"){
+	document.querySelector(".softkey-right p").innerHTML = "";
+	}
 }
 function showBowtons(e){
 	if (e == "links"){
     document.querySelector(".softkey-left p").innerHTML = "Links";
+	if (enabledAds == "true"){
+	document.querySelector(".softkey-right p").innerHTML = "Show Ad";}
 } else {
 	document.querySelector("#scorebowton").style.display = "inline-flex";
 	document.querySelector("#selectbowton").style.display = "none";
@@ -276,16 +293,15 @@ function showBowtons(e){
 
 var clicks = 0;
 var timer, timeout = 350; // time between each click
-var tripleClick = function(e) {
-  window.open("http://www.youtube.com/watch?v=v1POP-m76ac")
-}
+
 document.getElementById("kopi").addEventListener('click', function(e) {
   clearTimeout(timer);
   clicks++;
   var evt = e;
   timer = setTimeout(function() {
 // to do: debug menu 
-    if(clicks==3) tripleClick(evt);
+    if(clicks==3) window.open("http://www.youtube.com/watch?v=v1POP-m76ac");
+	if(clicks==2) console.log("double click lao");
     clicks = 0;
   }, timeout);
 });
@@ -574,3 +590,11 @@ function getWidth() {
     document.documentElement.clientWidth
   );
 }
+
+for(var i = 0; i < document.querySelectorAll('.links').length; i++) {
+	document.querySelectorAll('.links')[i].addEventListener("click", function(){
+		window.open(this.innerHTML)
+	})
+	document.querySelectorAll('.links')[i].href="javascript:void(null);"
+}
+
