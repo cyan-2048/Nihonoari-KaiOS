@@ -59,7 +59,7 @@ MIT
 ## Honorable mentions lol
 - [arma7x](https://github.com/arma7x/) - for being awesome
 - yeah and also [permafrost06](https://github.com/permafrost06)
-- Yeah Affe Nulle is very very cool and also help me out
+- Yeah [Affe Nulle](https://github.com/affenull2345) is very very cool and also help me out
 - [farooq](https://github.com/farooqkz/) is very cool
 - tbh everything isn't possible without the help of the BananaHackers/KaiOS Discord Community lol
 
