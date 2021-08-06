@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="css/sussy.css">
 <meta name="description" content="rip-off of Nihonoari">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="rgb(5, 5, 5)">
 <script src="js/spatial_navigation.js"></script>
 <script src="js/verysus.js" defer></script>
 <!-- comment this part to get rid of ads -->
@@ -204,7 +205,6 @@
 <div class="licenso">
 	<div id="header">LICENSES</div>
 	<div id="kopi" tabindex="0">
-	<div id='ad-container'></div>
 	<div>
 Nihonoari-KaiOS<br>
 MIT License
@@ -254,7 +254,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 <br><br>
 KaiOS-native-UI<br>(<a class="links">https://github.com/canicjusz/KaiOS-native-UI</a>)<br><br>
 <br>
- DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE <br>
+ WTFPL <br>
  Version 2, December 2004 <br>
 <br>
  Copyright (C) 2004 Sam Hocevar <sam@hocevar.net> <br>
@@ -263,10 +263,10 @@ KaiOS-native-UI<br>(<a class="links">https://github.com/canicjusz/KaiOS-native-U
  copies of this license document, and changing it is allowed as long <br>
  as the name is changed. <br>
 <br>
- DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE <br>
+ WTFPL <br>
  TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION <br>
 <br>
- 0. You just DO WHAT THE FUCK YOU WANT TO.
+ 0. You just DO WHAT YOU WANT TO.
  <br><br>
 =====
 <br><br>
@@ -642,6 +642,31 @@ Exhibit B - &quot;Incompatible With Secondary Licenses&quot; Notice<br>
 
 </div>
 
+<div class="devug" >
+	<div id="header">Debug Menu</div>
+	<div class="options" id="debugmenu" >
+<div class="checkbox-container">
+  <p class="checkbox-container__text">
+    Show Array
+  </p>
+  <input type="checkbox" tabindex="0" class="checkbox-container__checkbox debfocusable" id="showarray"><img src="img/transparent.png" id="switch">
+</div>
+<div id="storr" style="padding: 10px;line-height: 155%;background-color: rgb(33,33,33);"></div>
+  <button tabindex="0" class="button-container__button debfocusable" onclick="debugRef();">
+    Refresh
+  </button>
+  <button tabindex="0" class="button-container__button debfocusable" onclick="window.location.reload()">
+    Reload App
+  </button>
+    <button tabindex="0" class="button-container__button debfocusable" onclick="localStorage.clear();debugRef();">
+    Clear localStorage
+  </button>
+
+</div>
+</div>
+
+
+</div>
 <div class="playgr">
    <div class="kanaklas" tabindex="0">ベタ</div>
    <input type="text" tabindex="0" id="datonebox"  placeholder="Enter rōmaji" maxlength="8">

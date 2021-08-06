@@ -1,24 +1,18 @@
 {
-  "version": "1.0.4",
+  "version": "1.0.7",
   "name": "Nihonoari",
   "description": "A simple Japanese Kana training app for KaiOS.",
   "launch_path": "/index.html",
   "icons": {
-    "48": "/img/icons/icon48x48.png",
-    "60": "/img/icons/icon60x60.png",
-    "128": "/img/icons/icon128x128.png"
+    "56": "/img/icons/icon56x56.png",
+    "112": "/img/icons/icon112x112.png"
   },
   "origin": "app://nihonoari.cyankindasus.com",
   "developer": {
     "name": "Cyan",
     "url": "https://github.com/cyan-2048/Nihonoari-KaiOS"
   },
-  "type": "privileged",
-  "permissions": {
-        "systemXHR": {},
-        "mobiledata": {},
-        "wifidata": {}
-    },
+  "type": "web",
   "dependencies": {"ads-sdk": "1.5.0"},
   "installs_allowed_from": [
     "*"

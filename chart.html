@@ -5,6 +5,7 @@
 <meta name="description" content="rip-off of Nihonoari">
 <meta charset="utf-8">
 <meta name="viewport" content="width=240, initial-scale=1">
+<meta name="theme-color" content="rgb(5, 5, 5)">
 
 <style>
 :root{
@@ -130,7 +131,7 @@ const root = document.querySelector(':root');
 	if (e.key == 'Backspace'){
 	e.preventDefault();
 	document.querySelector("body").classList.add("gofaraway");
-	setTimeout(function(){history.go(-1);},500);
+	setTimeout(function(){history.back();},500);
 	}
 	if (e.key == 'ArrowUp'){
 	e.preventDefault();

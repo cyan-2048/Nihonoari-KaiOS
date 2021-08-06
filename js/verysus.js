@@ -28,6 +28,12 @@ if (e.key == 'Backspace'){
 		};
 		SpatialNavigation.enable("main");
 	}
+	if (document.activeElement.parentNode.id == "debugmenu" || document.activeElement.parentNode.parentElement.id == "debugmenu" ){
+		e.preventDefault();
+		SpatialNavigation.remove("deb");
+		document.querySelector(".devug").classList.add("goaway");
+		setTimeout(function(){document.querySelector(".devug").style.display = "none";document.querySelector(".devug").classList.remove("goaway");document.querySelector("#kopi").focus();},400);
+	}
 	if (document.activeElement.id == "kopi"){
 		e.preventDefault();
 		document.querySelector(".licenso").classList.add("goaway");
@@ -75,44 +81,41 @@ if (e.key == "ArrowUp" || e.key == "ArrowDown"){
 	}
 
 }
-if (document.activeElement.parentNode.parentElement.id == "hiraragana"){
+if (document.activeElement.parentNode.parentElement.id == "hiraragana" || document.activeElement.parentNode.parentElement.id == "aitakata"){
+	var active = document.activeElement.parentNode.parentElement.id;
 	if (e.key == "ArrowUp"){
-		setTimeout(function(){document.getElementById("hiraragana").scrollBy({top:-50, behavior:"smooth"})},50);
-		if (document.activeElement.id == "focusdumbass"){
-			setTimeout(function(){document.getElementById("hiraragana").scrollBy({top:3000, behavior:"smooth"})},50);
+		e.preventDefault();
+		 setTimeout(function(){document.getElementById(active).scrollBy({top:-60, behavior:"smooth"})},50);
+		if (document.activeElement.id == "focusdumbass" || document.activeElement.id == "focusdumbass1"){
+			setTimeout(function(){document.getElementById(active).scrollBy({top:3000, behavior:"smooth"})},50);
+			if (active == "hiraragana"){
 			setTimeout(function(){document.querySelector("#lastitem").focus();},600);
-		}
-	}
-	if (e.key == "ArrowDown"){
-		setTimeout(function(){document.getElementById("hiraragana").scrollBy({top:50, behavior:"smooth"})},50)
-		if (document.activeElement.id == "lastitem"){
-			setTimeout(function(){document.getElementById("hiraragana").scrollBy({top:-3000, behavior:"smooth"})},50);
-			setTimeout(function(){document.querySelector("#focusdumbass").focus();},450);
-		}
-	}
-}
-
-if (document.activeElement.parentNode.parentElement.id == "aitakata"){
-		if (e.key == "ArrowUp"){
-			setTimeout(function(){document.getElementById("aitakata").scrollBy({top:-50, behavior:"smooth"})},50)
-			if (document.activeElement.id == "focusdumbass1"){
-				setTimeout(function(){document.getElementById("aitakata").scrollBy({top:3000, behavior:"smooth"})},50);
+			} else {
 				setTimeout(function(){document.querySelector("#lastitem1").focus();},600);
 			}
 		}
-		if (e.key == "ArrowDown"){
-			setTimeout(function(){document.getElementById("aitakata").scrollBy({top:50, behavior:"smooth"})},50)
-			if (document.activeElement.id == "lastitem1"){
-				setTimeout(function(){document.getElementById("aitakata").scrollBy({top:-3000, behavior:"smooth"})},50);
-				setTimeout(function(){document.querySelector("#focusdumbass1").focus();},500);
+	}
+	if (e.key == "ArrowDown"){
+		e.preventDefault();
+		 setTimeout(function(){document.getElementById(active).scrollBy({top:60, behavior:"smooth"})},50)
+		if (document.activeElement.id == "lastitem" || document.activeElement.id == "lastitem1"){
+			setTimeout(function(){document.getElementById(active).scrollBy({top:-3000, behavior:"smooth"})},50);
+			if (active == "hiraragana"){
+			setTimeout(function(){document.querySelector("#focusdumbass").focus();},450);
+			} else {
+				setTimeout(function(){document.querySelector("#focusdumbass1").focus();},450);
 			}
 		}
+	}
+} else {
+	
 }
+
 
 }
 
 if (e.key == "Enter"){
-	if (document.activeElement.className == "checkbox-container__checkbox hirfocusable" || document.activeElement.className == "checkbox-container__checkbox katfocusable" || document.activeElement.id == "kopi"){
+	if (document.activeElement.className == "checkbox-container__checkbox hirfocusable" || document.activeElement.className == "checkbox-container__checkbox katfocusable" || document.activeElement.id == "kopi" || document.activeElement.className == "checkbox-container__checkbox debfocusable" ){
 		document.activeElement.click()
 	}
 	if (document.activeElement.id == "hirBTN"){
@@ -269,8 +272,10 @@ if (x.ftuhint == "NO"){
 if (x.debugArr == "yep"){
 	document.querySelector("#testlangpo").style.display = "block";
 	document.querySelector("#testlangpo").innerHTML = chArr;
+	document.querySelector("#showarray").checked = true;
 } else {
 	document.querySelector("#testlangpo").style.display = "none";
+	document.querySelector("#showarray").checked = false;
 }
 };
 
@@ -306,8 +311,8 @@ document.getElementById("kopi").addEventListener('click', function(e) {
   var evt = e;
   timer = setTimeout(function() {
 // to do: debug menu 
-    if(clicks==3) window.open("http://www.youtube.com/watch?v=v1POP-m76ac");
-	if(clicks==2) console.log("double click lao");
+  if(clicks==3) {window.open("http://www.youtube.com/watch?v=v1POP-m76ac");}
+	if(clicks==2) {SpatialNavigation.add({ selector: '.debfocusable', straightOnly: true, id: "deb",});document.querySelector(".devug").style.display = "block";debugRef();document.querySelector("#showarray").focus();}
     clicks = 0;
   }, timeout);
 });
@@ -470,6 +475,18 @@ function notrickroll(){
 		document.querySelector("#testlangpo").innerHTML = chArr;
 }
 
+document.querySelector("#showarray").addEventListener("change", function(){
+	
+	if (this.checked){
+		localStorage.debugArr = "yep";
+		document.querySelector("#testlangpo").innerHTML = chArr;
+		document.querySelector("#testlangpo").style.display = "block";
+	} else {
+		localStorage.debugArr = "nope";
+		document.querySelector("#testlangpo").style.display = "none";
+	}
+	debugRef();
+})
 
 function ranCho(){
 	document.querySelector("#testlangpo").innerHTML = chArr;
@@ -604,3 +621,19 @@ for(var i = 0; i < document.querySelectorAll('.links').length; i++) {
 	document.querySelectorAll('.links')[i].href="javascript:void(null);"
 }
 
+function allStorage() {
+
+    var archive = [],
+        keys = Object.keys(localStorage),
+        i = 0, key;
+
+    for (; key = keys[i]; i++) {
+        archive.push( key + ' : ' + localStorage.getItem(key));
+    }
+
+    return archive;
+}
+
+function debugRef(){
+	document.getElementById("storr").innerHTML = allStorage().join("<br>");
+}
