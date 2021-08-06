@@ -5,7 +5,6 @@
 
 Nihonoari-KaiOS is a Japanese Kana training app for KaiOS.
 
-- It's a work in progress... 
 - the code is fkin horrible beware...
 
 ## Features
@@ -59,5 +58,8 @@ MIT
 
 ## Honorable mentions lol
 - [arma7x](https://github.com/arma7x/) - for being awesome
-- yeah and also permafrost
+- yeah and also [permafrost06](https://github.com/permafrost06)
+- Yeah Affe Nulle is very very cool and also help me out
+- [farooq](https://github.com/farooqkz/) is very cool
+- tbh everything isn't possible without the help of the BananaHackers/KaiOS Discord Community lol
 
