@@ -1,6 +1,7 @@
 {
-  "version": "1.0.7",
+  "version": "1.0.9",
   "name": "Nihonoari",
+	"theme_color":"#f34137",
   "description": "A simple Japanese Kana training app for KaiOS.",
   "launch_path": "/index.html",
   "icons": {

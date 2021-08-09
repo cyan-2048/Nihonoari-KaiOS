@@ -15,13 +15,13 @@ Nihonoari-KaiOS is a Japanese Kana training app for KaiOS.
 
 ## Screenshots
 
-![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/mayn.png)
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/upload%20to%20KaiStore/mayn.png)
 ![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/bfrrrr.png)
 ![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/pilika.png)
-![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/pi.png)
-![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/tamaka.png)
-![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/malika.png)
-![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/shtatishtiks.png)
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/upload%20to%20KaiStore/pi.png)
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/upload%20to%20KaiStore/tamaka.png)
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/upload%20to%20KaiStore/malika.png)
+![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/upload%20to%20KaiStore/shtatishtiks.png)
 ![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/3.png)
 ![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/4.png)
 ![](https://raw.githubusercontent.com/cyan-2048/Nihonoari-KaiOS/main/screenshots/5.png)
