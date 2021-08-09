@@ -9,9 +9,9 @@ Nihonoari-KaiOS is a Japanese Kana training app for KaiOS.
 
 ## Features
 
-- No ads (unless i wanna upload this to the KaiStore)
+- No ads (Well, the kaistore version does... it's not anooying though it's pretty much hidden)
 - made using my ~~horrible~~ beginner JS skills. 
-- WIP -> ~~the training part, i haven't done it yet im a lazy ass... if you want to help me PRs are very much appreciated~~ es done... more cosmetic changes will come doe
+- WIP -> ~~the training part, i haven't done it yet im a lazy ass... if you want to help me PRs are very much appreciated~~ ~~es done... more cosmetic changes will come doe~~ i ran out of ideas this version(1.0.9) should be the last cosmetic change
 
 ## Screenshots
 
