@@ -1,0 +1,35 @@
+{
+    "id": "Nihonoari",
+    "name": "Nihonoari",
+    "short_name": "Nihonoari",
+    "categories": ["education"],
+    "description": "Nihonoari is a simple app to memorize and practice the Hiragana and Katakana alphabets without in-app purchases and useless functions, simpler is better.",
+    "lang": "en-US",
+    "theme_color": "#f34137",
+    "orientation": "portrait",
+    "start_url": "/index.html",
+    "icons": [
+        {
+            "src": "/img/icons/icon56x56.png",
+            "type": "image/png",
+            "sizes": "56x56"
+        },
+        {
+            "src": "/img/icons/icon112x112.png",
+            "type": "image/png",
+            "sizes": "112x112"
+        }
+    ],
+    "b2g_features": {
+        "origin": "nihonoari-kaios",
+        "developer": {
+        "name": "Cyan",
+         "url": "https://github.com/cyan-2048/Nihonoari-KaiOS"
+        },
+        "type": "web",
+        "subtitle": "A simple Japanese Kana training app for KaiOS.",
+        "permissions": {},
+        "version": "1.0.0",
+        "focus_color": "#f34137"
+    }
+}

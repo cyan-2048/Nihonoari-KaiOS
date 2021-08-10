@@ -35,7 +35,6 @@ Nihonoari-KaiOS is a Japanese Kana training app for KaiOS.
 - ❤️
 
 ## Release
-- The one in the KaiStore has a bug when scrolling through the kana picker(i was told the update would be published next monday)... And no one merged my merge request on the bhacker store yet.... 
 
   <a href="https://store.bananahackers.net/#nihonoari">
     <img src="https://cdn.discordapp.com/attachments/813030840526569472/871547076851425280/konsep.png" alt="Logo" width=200
@@ -48,7 +47,7 @@ Nihonoari-KaiOS is a Japanese Kana training app for KaiOS.
 
 ## Installation
 
-i'll upload it to the bhackers store if im done...  or just install the source code through WebIDE
+There's a script for making an omnisd package...  or just install the source code through WebIDE.
 
 ## License
 
