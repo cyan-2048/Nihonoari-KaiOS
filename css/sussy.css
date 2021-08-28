@@ -20,7 +20,7 @@
   to {
     box-shadow: 0px 0px 0px 800px rgba(0, 0, 0, 0);
     bottom: -300px;
-    opacity: 0 height: 0% !important;
+    opacity: 0% !important;
   }
 }
 
@@ -125,8 +125,7 @@
   text-transform: none;
 }
 
-text-transform: none;
-}
+
 
 ::placeholder {
   /* Recent browsers */
@@ -418,7 +417,8 @@ a:focus {
 .options {
   overflow: var(--content-overflow);
   width: 100%;
-  height: calc(100% - 60px)
+  height: calc(100% - 60px);
+
 }
 
 

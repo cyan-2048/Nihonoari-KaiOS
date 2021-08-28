@@ -101,9 +101,14 @@ function handleKeyDown(e) {
 			if (e.key == "ArrowUp") {
 				e.preventDefault();
 				setTimeout(function() { 
-				if (document.activeElement.getBoundingClientRect().bottom <= 150){
-				 document.getElementById(active).scrollBy({ top: -60, behavior: "smooth" }) 
-				}
+				const rect = document.activeElement.getBoundingClientRect();
+				const elY =
+				rect.top - document.body.getBoundingClientRect().top + rect.height / 2;
+				document.activeElement.parentNode.parentElement.scrollBy({
+				left: 0,
+				top: elY - window.innerHeight / 2,
+				behavior: "smooth",
+				});
 				}, 50);
 				if (document.activeElement.id == "focusdumbass" || document.activeElement.id == "focusdumbass1") {
 					setTimeout(function() { document.getElementById(active).scrollBy({ top: 3000, behavior: "smooth" }) }, 50);
@@ -117,9 +122,15 @@ function handleKeyDown(e) {
 			if (e.key == "ArrowDown") {
 				e.preventDefault();
 				setTimeout(function() { 
-				if (document.activeElement.getBoundingClientRect().top >= 120){
-					document.getElementById(active).scrollBy({ top: 60, behavior: "smooth" })
-					}
+				const rect = document.activeElement.getBoundingClientRect();
+const elY =
+    rect.top - document.body.getBoundingClientRect().top + rect.height / 2;
+
+document.activeElement.parentNode.parentElement.scrollBy({
+    left: 0,
+    top: elY - window.innerHeight / 2,
+    behavior: "smooth",
+});
 				}, 50)
 				if (document.activeElement.id == "lastitem" || document.activeElement.id == "lastitem1") {
 					setTimeout(function() { document.getElementById(active).scrollBy({ top: -3000, behavior: "smooth" }) }, 50);
