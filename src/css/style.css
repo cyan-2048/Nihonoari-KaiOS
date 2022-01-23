@@ -1,0 +1,400 @@
+:root {
+	--white-on: url(checkboxes-radios/checkbox-on-kaios-2.5.3.svg);
+	--white-off: url(checkboxes-radios/checkbox-off-kaios-2.5.3.svg);
+	--black-on: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 522 512'%3E%3Cpath fill='%23363636'%0Ad='M304 80q53 0 90.5 37.5t37.5 90.5v96q0 53 -37.5 90.5t-90.5 37.5h-96q-53 0 -90.5 -37.5t-37.5 -90.5v-96q0 -53 37.5 -90.5t90.5 -37.5h96zM392 304v-96q0 -36 -26 -62t-62 -26h-96q-36 0 -62 26t-26 62v96q0 36 26 62t62 26h96q36 0 62 -26t26 -62zM329 177l-1 1%0Aq6 -7 16 -7q9 0 16 6.5t7 15.5t-6 15l-115 128q-7 7 -16.5 7t-15.5 -7l-64 -64q-7 -7 -7 -16t6.5 -16t16 -7t16.5 7l48 48z' /%3E%3C/svg%3E%0A");
+	--black-off: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 522 512'%3E%3Cpath fill='%23363636'%0Ad='M304 80q53 0 90.5 37.5t37.5 90.5v96q0 53 -37.5 90.5t-90.5 37.5h-96q-53 0 -90.5 -37.5t-37.5 -90.5v-96q0 -53 37.5 -90.5t90.5 -37.5h96zM392 304v-96q0 -36 -26 -62t-62 -26h-96q-36 0 -62 26t-26 62v96q0 36 26 62t62 26h96q36 0 62 -26t26 -62z' /%3E%3C/svg%3E%0A");
+	--on-image: var(--white-on);
+	--off-image: var(--white-off);
+	--focus-on: var(--white-on);
+	--focus-off: var(--white-off);
+	--soft-bord: none;
+	--soft-padd: 0.5rem;
+}
+
+* {
+	font-family: "Fira Sans", "Open Sans", sans-serif;
+	user-select: none;
+}
+
+body,
+#chart {
+	background-color: var(--app-background);
+}
+
+#hiragana,
+#katakana,
+#options,
+#main,
+#chart,
+#game {
+	height: 100%;
+	position: fixed;
+	top: 0;
+	transition: transform cubic-bezier(1, 0, 0, 1) 0.4s, box-shadow ease 0.5s;
+}
+
+#options,
+#hiragana,
+#chart,
+#katakana {
+	box-shadow: 0px 0px 0px 800px rgba(0, 0, 0, 0);
+	transform: translateY(100vh);
+}
+
+#game {
+	width: 100%;
+	height: calc(100% - 3rem);
+	transform: translateX(100vw);
+	z-index: 1;
+	background-color: var(--app-background);
+}
+
+#chart {
+	width: 100vw;
+	height: calc(100% - 3rem);
+	overflow: auto;
+	white-space: nowrap;
+	--scale: 1;
+	font-size: 0;
+	padding-left: calc(3px * var(--scale));
+	box-sizing: border-box;
+	z-index: 3;
+}
+
+#chart > div {
+	width: calc(48px * var(--scale));
+	height: calc(48px * var(--scale));
+	background: white;
+	font-size: calc(22px * var(--scale));
+	font-weight: 300;
+	text-align: center;
+	color: orange;
+	display: inline-block;
+	padding-top: 0.4em;
+	box-sizing: border-box;
+	margin-top: calc(3px * var(--scale));
+	margin-right: calc(3px * var(--scale));
+	overflow: hidden;
+	outline: black 1px solid;
+}
+
+#chart > div::after {
+	content: "bruh";
+	font-size: 0px;
+}
+
+#chart > div[k][r] {
+	color: black;
+	font-weight: 500;
+	font-size: calc(16px * var(--scale));
+	position: relative;
+	padding-top: 0.5em;
+}
+
+#chart > div[k][r]::after,
+#chart > div[k][r]::before {
+	position: absolute;
+	font-weight: inherit;
+	bottom: calc(3px * var(--scale));
+}
+
+#chart > div[k][r]::after {
+	font-size: calc(12px * var(--scale));
+	content: attr(r);
+	right: calc(9px * var(--scale));
+}
+#chart > div[k][r]::before {
+	font-size: calc(12px * var(--scale));
+	content: attr(k);
+	left: calc(9px * var(--scale));
+}
+
+.softkeys svg {
+	height: 100%;
+}
+
+.ccc {
+	image-rendering: -moz-crisp-edges;
+}
+
+#game:target,
+#chart:target ~ #game,
+#stats:target ~ #game {
+	transform: none;
+}
+
+#game:target + #main {
+	transform: translateX(-100vw);
+}
+
+#options:target,
+#chart:target,
+#hiragana:target,
+#katakana:target,
+#stats:target,
+#stats:target div {
+	box-shadow: 0px 0px 0px 800px rgba(0, 0, 0, 0.8);
+	transform: none;
+	opacity: 1;
+	visibility: visible;
+}
+
+#stats div {
+	background-color: white;
+	color: #131313;
+	position: absolute;
+	bottom: 10px;
+	padding: 1.2rem;
+	font-size: 1.5rem;
+	font-weight: 500;
+	border-radius: 25px;
+	transform: scale(0.9) translateY(5px);
+	width: calc(100vw - 10px);
+	box-sizing: border-box;
+	transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+#stats div::before {
+	content: "Statistics";
+	position: absolute;
+	font-size: 1.6rem;
+	font-weight: 600;
+	color: white;
+	top: -25px;
+	left: 12px;
+}
+
+#stats div::after {
+	content: "";
+	position: absolute;
+	height: 0px;
+	bottom: -10px;
+	right: 25px;
+	width: 0;
+	border-top: 12px solid white;
+	border-left: 0px solid transparent;
+	border-right: 12px solid transparent;
+}
+
+#stats {
+	visibility: hidden;
+	opacity: 0;
+	width: 100%;
+	height: calc(100% - 3rem);
+	position: fixed;
+	top: 0;
+	z-index: 30;
+	padding: 5px;
+	padding-bottom: 5px;
+	padding-bottom: 0;
+	box-sizing: border-box;
+	transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#stats svg {
+	color: white;
+	z-index: 10;
+	position: fixed;
+	width: 20px;
+	bottom: 5px;
+	right: 5px;
+}
+
+.bcb {
+	border-radius: 5rem;
+	background-color: rgba(0, 0, 0, 0);
+	border: solid 2px var(--button-background);
+}
+
+.bcb:focus {
+	border: solid 2px var(--button-background-focused);
+}
+
+.bcb:disabled {
+	background-color: #cccccc;
+	border: solid 2px #cccccc;
+	color: #080808;
+}
+
+#main .l {
+	padding-left: 4rem;
+}
+
+#main .l .ccc {
+	right: auto;
+	left: 0.5rem;
+}
+
+div p {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.softkeys {
+	position: fixed;
+	z-index: 20;
+	bottom: 0;
+	padding-top: var(--soft-padd);
+	border-top: var(--soft-bord);
+	/* border-top: 0.2rem solid #363636;
+	padding-top: 0.3rem; */
+}
+
+#lazyload {
+	position: fixed;
+	width: 50px;
+	top: -100vh;
+}
+
+.cci + .ccc {
+	background-color: transparent !important;
+}
+
+.cci + .ccc {
+	background-image: var(--off-image) !important;
+}
+.cci:checked + .ccc {
+	background-image: var(--on-image) !important;
+}
+.l:focus .cci + .ccc,
+.cci:focus + .ccc {
+	background-image: var(--focus-off) !important;
+}
+.l:focus .cci:checked + .ccc,
+.cci:checked:focus + .ccc {
+	background-image: var(--focus-on) !important;
+}
+
+#trollface {
+	background-image: url("https://upload.wikimedia.org/wikipedia/en/9/9a/Trollface_non-free.png");
+	background-size: 30vh;
+	background-color: whitesmoke;
+	background-position: center 28vh;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	z-index: 40;
+	background-repeat: no-repeat;
+	display: block;
+}
+
+#trollface::after {
+	content: "you're supposed to use this app on a KaiOS device.";
+	font-size: 5vh;
+	position: absolute;
+	bottom: 26vh;
+	padding: 6vw;
+	text-align: center;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+@media screen and (width: 320px) {
+	#trollface {
+		display: none;
+	}
+}
+@media screen and (width: 240px) {
+	#trollface {
+		display: none;
+	}
+}
+
+.disabled {
+	display: none;
+}
+
+#font_opt[data-value="0"] + p::after {
+	content: "Small";
+}
+
+#font_opt[data-value="1"] + p::after {
+	content: "Regular";
+}
+
+#font_opt[data-value="2"] + p::after {
+	content: "Large";
+}
+
+#toast_opt[data-value="1"] + p::after {
+	content: "1s";
+}
+#toast_opt[data-value="2"] + p::after {
+	content: "2s";
+}
+#toast_opt[data-value="3"] + p::after {
+	content: "3s";
+}
+#toast_opt[data-value="4"] + p::after {
+	content: "4s";
+}
+#toast_opt[data-value="5"] + p::after {
+	content: "5s";
+}
+
+#game #kana {
+	color: var(--header-color);
+	font-size: 8rem;
+	width: 100%;
+	text-align: center;
+	line-height: 1em;
+	margin-top: 22vh;
+}
+
+#game input::placeholder {
+	color: grey;
+}
+
+::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	text-transform: none;
+}
+
+#game input {
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	text-align: center;
+	width: 100%;
+	height: 3.6rem;
+	font-size: 2.4rem;
+	font-weight: 300;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 34px;
+	color: var(--header-color);
+	text-transform: lowercase;
+}
+
+@media screen and (width: 320px) {
+	#game #kana {
+		margin-top: 13vh;
+	}
+	#game input {
+		bottom: 8vh;
+	}
+}
+
+.wrong {
+	color: #ef1408 !important;
+}
+
+.right {
+	color: #19b252 !important;
+}
+
+#splash {
+	background-image: url("splash.png");
+	opacity: 1;
+	visibility: visible;
+	transition: all ease 0.4s;
+	background-color: white;
+	width: 100vw;
+	height: 100vh;
+	z-index: 39;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-repeat: no-repeat;
+	background-position: center;
+}

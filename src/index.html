@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<script src="js/focus-options-polyfill.js"></script>
+		<link rel="shortcut icon" type="image/png" href="css/icon56x56.png" />
+		<link rel="stylesheet" href="css/kaios-native-ui.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="rgb(255, 255, 255)" />
+		<title>Nihonoari</title>
+	</head>
+	<body>
+		<div id="lazyload">
+			<div class="cc">
+				<p class="cct"></p>
+				<p class="ccs"></p>
+				<input type="checkbox" tabindex="0" class="cci" checked />
+				<div class="ccc"></div>
+			</div>
+			<div class="cc">
+				<p class="cct"></p>
+				<p class="ccs"></p>
+				<input type="checkbox" tabindex="0" class="cci" checked />
+				<div class="ccc"></div>
+			</div>
+		</div>
+		<div id="splash"></div>
+		<div id="stats" tabindex="0">
+			<div>itsumo no michi wo (itsumo no michi wo) hashiru jitensha (hashiru jitensha)</div>
+			<svg fill="currentColor" viewBox="0 0 16 16">
+				<path
+					d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"
+				></path>
+			</svg>
+		</div>
+		<div id="chart" tabindex="0">
+			<div></div>
+			<div>あ</div>
+			<div>い</div>
+			<div>う</div>
+			<div>え</div>
+			<div>お</div>
+			<br />
+			<div>あ</div>
+			<div k="ア" r="a">あ</div>
+			<div k="イ" r="i">い</div>
+			<div k="ウ" r="u">う</div>
+			<div k="エ" r="e">え</div>
+			<div k="オ" r="o">お</div>
+			<br />
+			<div>か</div>
+			<div k="カ" r="ka">か</div>
+			<div k="キ" r="ki">き</div>
+			<div k="ク" r="ku">く</div>
+			<div k="ケ" r="ke">け</div>
+			<div k="コ" r="ko">こ</div>
+			<br />
+			<div>さ</div>
+			<div k="サ" r="sa">さ</div>
+			<div k="シ" r="shi">し</div>
+			<div k="ス" r="su">す</div>
+			<div k="セ" r="se">せ</div>
+			<div k="ソ" r="so">そ</div>
+			<br />
+			<div>た</div>
+			<div k="タ" r="ta">た</div>
+			<div k="チ" r="chi">ち</div>
+			<div k="ツ" r="tsu">つ</div>
+			<div k="テ" r="te">て</div>
+			<div k="ト" r="to">と</div>
+			<br />
+			<div>な</div>
+			<div k="ナ" r="na">な</div>
+			<div k="ニ" r="ni">に</div>
+			<div k="ヌ" r="nu">ぬ</div>
+			<div k="ネ" r="ne">ね</div>
+			<div k="ノ" r="no">の</div>
+			<br />
+			<div>は</div>
+			<div k="ハ" r="ha">は</div>
+			<div k="ヒ" r="hi">ひ</div>
+			<div k="フ" r="fu">ふ</div>
+			<div k="ヘ" r="he">へ</div>
+			<div k="ホ" r="ho">ほ</div>
+			<br />
+			<div>ま</div>
+			<div k="マ" r="ma">ま</div>
+			<div k="ミ" r="mi">み</div>
+			<div k="ム" r="mu">む</div>
+			<div k="メ" r="me">め</div>
+			<div k="モ" r="mo">も</div>
+			<br />
+			<div>や</div>
+			<div k="ヤ" r="ya">や</div>
+			<div></div>
+			<div k="ユ" r="yu">ゆ</div>
+			<div></div>
+			<div k="ヨ" r="yo">よ</div>
+			<br />
+			<div>ら</div>
+			<div k="ラ" r="ra">ら</div>
+			<div k="リ" r="ri">り</div>
+			<div k="ル" r="ru">る</div>
+			<div k="レ" r="re">れ</div>
+			<div k="ロ" r="ro">ろ</div>
+			<br />
+			<div>わ</div>
+			<div k="ワ" r="wa">わ</div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div k="ヲ" r="wo">を</div>
+			<br />
+			<div></div>
+			<div k="ン" r="n">ん</div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div id="game">
+			<div id="kana" tabindex="0">ぴ</div>
+			<input type="text" id="game_input" tabindex="0" placeholder="Enter rōmaji" maxlength="8" />
+		</div>
+		<div id="main">
+			<div id="header">nihonoari <b>project</b></div>
+			<div id="content">
+				<div id="hiragana_btn" class="l" tabindex="0">
+					<input type="checkbox" class="cci" disabled />
+					<div class="ccc"></div>
+					<p class="lt">Hiragana</p>
+					<p class="ls">Add Hiragana syllabary</p>
+					<span class="li"></span>
+				</div>
+				<div id="katakana_btn" class="l" tabindex="0">
+					<input type="checkbox" class="cci" disabled />
+					<div class="ccc"></div>
+					<p class="lt">Katakana</p>
+					<p class="ls">Add Katakana syllabary</p>
+					<span class="li"></span>
+				</div>
+				<div class="bc">
+					<button tabindex="0" id="select_btn" class="bcb">Select one</button>
+					<button tabindex="0" id="options_btn" class="bcb">Options</button>
+				</div>
+			</div>
+		</div>
+		<div id="hiragana">
+			<div id="header">Hiragana set</div>
+			<div id="content">
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">あ い う え お</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">か き く け こ</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">さ し す せ そ</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">た ち つ て と</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">な に ぬ ね の</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">は ひ ふ へ ほ</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">ま み む め も</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">や ゆ よ</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">ら り る れ ろ</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">わ を</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">ん</p>
+				</div>
+
+				<div id="murky" class="disabled">
+					<div class="cc">
+						<input type="checkbox" tabindex="0" class="cci" />
+						<div class="ccc"></div>
+						<p class="cct">が ぎ ぐ げ ご</p>
+					</div>
+					<div class="cc">
+						<input type="checkbox" tabindex="0" class="cci" />
+						<div class="ccc"></div>
+						<p class="cct">ざ じ ず ぜ ぞ</p>
+					</div>
+					<div class="cc">
+						<input type="checkbox" tabindex="0" class="cci" />
+						<div class="ccc"></div>
+						<p class="cct">だ ぢ づ で ど</p>
+					</div>
+					<div class="cc">
+						<input type="checkbox" tabindex="0" class="cci" />
+						<div class="ccc"></div>
+						<p class="cct">ば び ぶ べ ぼ</p>
+					</div>
+					<div class="cc">
+						<input type="checkbox" tabindex="0" class="cci" />
+						<div class="ccc"></div>
+						<p class="cct">ぱ ぴ ぷ ぺ ぽ</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="katakana">
+			<div id="header">Katakana set</div>
+			<div id="content">
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">ア イ ウ エ オ</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">カ キ ク ケ コ</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">サ シ ス セ ソ</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">タ チ ツ テ ト</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">ナ ニ ヌ ネ ノ</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">ハ ヒ フ ヘ ホ</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">マ ミ ム メ モ</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">ヤ ユ ヨ</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">ラ リ ル レ ロ</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">ワ ヲ</p>
+				</div>
+				<div class="cc">
+					<input type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+					<p class="cct">ン</p>
+				</div>
+
+				<div id="murky" class="disabled">
+					<div class="cc">
+						<input type="checkbox" tabindex="0" class="cci" />
+						<div class="ccc"></div>
+						<p class="cct">ガ ギ グ ゲ ゴ</p>
+					</div>
+					<div class="cc">
+						<input type="checkbox" tabindex="0" class="cci" />
+						<div class="ccc"></div>
+						<p class="cct">ザ ジ ズ ゼ ゾ</p>
+					</div>
+					<div class="cc">
+						<input type="checkbox" tabindex="0" class="cci" />
+						<div class="ccc"></div>
+						<p class="cct">ダ ヂ ヅ デ ド</p>
+					</div>
+					<div class="cc">
+						<input type="checkbox" tabindex="0" class="cci" />
+						<div class="ccc"></div>
+						<p class="cct">バ ビ ブ ベ ボ</p>
+					</div>
+					<div class="cc">
+						<input type="checkbox" tabindex="0" class="cci" />
+						<div class="ccc"></div>
+						<p class="cct">パ ピ プ ペ ポ</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="options">
+			<div id="header">Options</div>
+			<div id="content">
+				<div class="cc">
+					<p class="cct">Enable Dark Mode</p>
+					<input id="dark_opt" type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+				</div>
+				<div class="cc">
+					<p class="cct" style="margin-top: -2.7px">Separate Diatrics</p>
+					<p class="ccs">(dakuten/handakuten)</p>
+					<input id="dia_opt" type="checkbox" tabindex="0" class="cci" />
+					<div class="ccc"></div>
+				</div>
+				<div class="sc">
+					<p class="sct">Font Size</p>
+					<input type="range" id="font_opt" tabindex="0" min="0" max="2" value="1" data-value="1" class="sci" />
+					<p class="scs"></p>
+				</div>
+				<div class="sc">
+					<p class="sct">Toast Delay</p>
+					<input type="range" id="toast_opt" tabindex="0" min="1" max="5" value="3" data-value="3" class="sci" />
+					<p class="scs"></p>
+				</div>
+				<div class="bc">
+					<button tabindex="0" id="clear_opt" class="bcb">Clear Statistics</button>
+					<button tabindex="0" id="license_opt" class="bcb">Licenses</button>
+				</div>
+			</div>
+		</div>
+		<div class="softkeys">
+			<div class="softkey softkey-left"></div>
+			<div class="softkey softkey-center">select</div>
+			<div class="softkey softkey-right"></div>
+		</div>
+		<div class="toast">This is a toast message</div>
+		<div id="trollface"></div>
+	</body>
+	<script src="js/app.js" defer></script>
+</html>
