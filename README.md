@@ -4,11 +4,13 @@
 
 Nihonoari-KaiOS is a Japanese Kana training app for KaiOS.
 
+[Try the app on your desktop browser!](https://cyan-2048.github.io/Nihonoari-KaiOS/)
+
 ## Features
 
 - diatrics can be separated
 - light mode
-- advert is hidden in licenses page will not script will not load unless opened
+- advert is hidden in licenses page and will not load the script unless opened
 - more lightweight than v1 I guess
 
 ## Screenshots
@@ -35,7 +37,7 @@ soon(ui is kinda updated)
 
 ## Installation
 
-kaistore and bhacker store only
+kaistore and bhacker store only(release soon)
 
 ## License
 

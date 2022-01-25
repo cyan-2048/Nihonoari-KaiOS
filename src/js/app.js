@@ -104,8 +104,8 @@ window.addEventListener("load", function load(e) {
 		let timeout;
 
 		window.addEventListener("keydown", (e) => {
-			let n = e.target;
-			if (d[aE].id == "stats") {
+			let n = d[aE];
+			if (n.id == "stats") {
 				e.preventDefault();
 				window.history.back();
 				setTimeout(() => {
@@ -113,7 +113,7 @@ window.addEventListener("load", function load(e) {
 				}, 500);
 				return;
 			}
-			if (d[aE].id == "chart") {
+			if (n.id == "chart") {
 				switch (e.key) {
 					case "SoftLeft":
 						chartZoomOut();
@@ -163,15 +163,15 @@ window.addEventListener("load", function load(e) {
 			}
 			switch (e.key) {
 				case "Enter":
-					if ((n.tagName == "INPUT" || n.tagName == "BUTTON" || n.className == "l") && !Array.from(d[qA]("#main *")).includes(d[aE])) n.click();
+					if ((n.tagName == "INPUT" || n.tagName == "BUTTON" || n.className == "l") && !Array.from(d[qA]("#main *")).includes(n)) n.click();
 					if (n.id == "kana") toast.cancel();
 					break;
 				case "Backspace":
-					if (Array.from(d[qA]("#hiragana *, #katakana *, #options *")).includes(d[aE])) select.ergo("main"), update();
-					if (d[aE].type != "text" || d[aE].value == "") e.preventDefault();
-					if (Array.from(d[qA]("#main *")).includes(d[aE])) window.close();
+					if (Array.from(d[qA]("#hiragana *, #katakana *, #options *")).includes(n)) select.ergo("main"), update();
+					if (n.type != "text" || n.value == "") e.preventDefault();
+					if (Array.from(d[qA]("#main *")).includes(n)) window.close();
 					if (n.id == "game_input" && n.value == "") select.ergo("main");
-					if (Array.from(d[qA]("#options *")).includes(d[aE])) {
+					if (Array.from(d[qA]("#options *")).includes(n)) {
 						if (localStorage.options != JSON.stringify(options)) {
 							localStorage.options = JSON.stringify(options);
 							toast("Changes saved!");
@@ -227,10 +227,10 @@ window.addEventListener("load", function load(e) {
 			clearTimeout(timeout);
 			if (!longpress) {
 				// shortpress
-				let n = e.target;
+				let n = d[aE];
 				switch (e.key) {
 					case "Enter":
-						if (Array.from(d[qA]("#main *")).includes(d[aE])) n.click();
+						if (Array.from(d[qA]("#main *")).includes(n)) n.click();
 						break;
 				}
 			}
