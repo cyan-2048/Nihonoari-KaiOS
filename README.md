@@ -15,7 +15,7 @@ Nihonoari-KaiOS is a Japanese Kana training app for KaiOS.
 
 ## Screenshots
 
-soon(ui is kinda updated)
+![uwu](screenshots/nihonoari_banner.png)
 
 ## Built With
 
