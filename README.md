@@ -27,12 +27,12 @@ Nihonoari-KaiOS is a Japanese Kana training app for KaiOS.
 ## Release
 
   <a href="https://store.bananahackers.net/#nihonoari">
-    <img src="https://cdn.discordapp.com/attachments/813030840526569472/871547076851425280/konsep.png" alt="Logo" width=200
+    <img src="https://store.bananahackers.net/assets/logos/bhackers-store.svg" alt="Logo" width=200
   </a>
   
   
   <a href="https://www.kaiostech.com/store/apps/?bundle_id=kaios.app.nihonoari">
-    <img src="https://cdn.discordapp.com/attachments/813030840526569472/871545602578739200/KaiStore-Badge-Greyscale-Negative.png" alt="Logo" width=200
+    <img src="https://kaios.app/img/KaiStore-Badge-SM.png" alt="Logo" width=200
   </a>
 
 ## Installation
